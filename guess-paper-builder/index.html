@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Paper Builder: Find Repeated Exam Questions and Build a Guess Paper (Free)</title>
+    <meta
+      name="description"
+      content="Free AI study tool. Upload past papers and your book to find repeated exam questions, get a repetition report, and generate a likely guess paper. Bring your own API key. No signup."
+    />
+    <meta name="keywords" content="guess paper, past papers analysis, repeated exam questions, exam preparation tool, intermediate guess paper, board exam preparation, AI study tool, free guess paper maker" />
+    <meta name="author" content="Ubaid Ali" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="__SITE_URL__/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Guess Paper Builder" />
+    <meta property="og:title" content="Guess Paper Builder: Find Repeated Exam Questions" />
+    <meta property="og:description" content="Upload past papers and your book. Get a repetition report and a likely guess paper. Free, no signup." />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.svg" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guess Paper Builder: Find Repeated Exam Questions" />
+    <meta name="twitter:description" content="Upload past papers and your book. Get a repetition report and a likely guess paper. Free, no signup." />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Guess Paper Builder blog" href="__SITE_URL__/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/site.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "__SITE_URL__/#website",
+          "url": "__SITE_URL__/",
+          "name": "Guess Paper Builder",
+          "description": "Free AI study tool for finding repeated exam questions and building guess papers.",
+          "inLanguage": "en",
+          "publisher": { "@id": "__SITE_URL__/#founder" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "__SITE_URL__/#app",
+          "name": "Guess Paper Builder",
+          "url": "__SITE_URL__/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Any modern web browser",
+          "description": "Analyses past exam papers and a textbook to find repeated questions, produce a repetition report, and generate a likely guess paper with an answer key. Works with PDF, DOCX, XLSX, CSV and TXT files. Users bring their own API key from OpenAI, Google Gemini, Groq or Anthropic.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "author": { "@id": "__SITE_URL__/#founder" },
+          "featureList": "Repetition report, guess paper generation, answer key, follow-up chat in any language, browser-side file processing"
+        },
+        {
+          "@type": "Person",
+          "@id": "__SITE_URL__/#founder",
+          "name": "Ubaid Ali",
+          "url": "__SITE_URL__/about",
+          "email": "mailto:contact.ubaidmalik@gmail.com",
+          "sameAs": ["https://linkedin.com/in/m-ubaid-ali", "https://github.com/ubaidslab"],
+          "jobTitle": "Developer",
+          "knowsAbout": ["Python", "TypeScript", "React", "LangChain", "LangGraph", "Retrieval-augmented generation"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Guess Paper Builder?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Guess Paper Builder is a free web tool that reads your past exam papers and textbook, counts how often each question repeats across years, and writes a likely guess paper with an answer key." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Guess Paper Builder free?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. The tool is free. You only pay your AI provider if you choose a paid model. Groq offers a free tier." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to create an account?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. There is no login, signup or subscription." }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my files uploaded to a server?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. Files are read in your browser. The only outside request is the call to the AI provider you choose, made with your own API key." }
+            },
+            {
+              "@type": "Question",
+              "name": "Which file types can I upload?",
+              "acceptedAnswer": { "@type": "Answer", "text": "You can upload text-based PDF, DOCX, XLS, XLSX, CSV, TXT and Markdown files, up to 20 files per session." }
+            },
+            {
+              "@type": "Question",
+              "name": "Does it work with scanned papers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. Scanned PDFs need a text layer. Text-based PDFs give the best results." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the guess paper guaranteed to appear in the exam?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. The guess paper is a study aid built from patterns in past papers. It cannot predict the exam, so use it alongside your textbook and teacher's guidance." }
+            },
+            {
+              "@type": "Question",
+              "name": "Which AI providers are supported?",
+              "acceptedAnswer": { "@type": "Answer", "text": "OpenAI, Google Gemini, Groq and Anthropic Claude. You paste your own key for the one you choose." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="/" aria-label="Guess Paper Builder home">
+          <span class="brand-mark" aria-hidden="true">GP</span>
+          <span>Guess Paper Builder</span>
+        </a>
+        <nav aria-label="Primary">
+          <a href="#tool">Tool</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <p class="eyebrow">Free exam prep tool for students</p>
+          <h1>Find the questions that keep coming back.</h1>
+          <p class="lead">
+            Upload your past papers and your textbook. Guess Paper Builder counts how often each question
+            repeats across years, then writes a likely guess paper you can practise with. No login. No subscription.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#tool">Start analysing</a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
+          </div>
+          <ul class="trust-list">
+            <li>PDF, Word, Excel, CSV and text files</li>
+            <li>Bring your own AI key: OpenAI, Gemini, Groq or Claude</li>
+            <li>Your files are processed in your browser</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tool" class="tool-section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Analyse your papers</h2>
+            <p>Upload up to 20 files, choose an AI provider, and run the analysis.</p>
+          </div>
+          <div id="root">
+            <noscript>Please enable JavaScript to use the Guess Paper Builder tool.</noscript>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>How it works</h2>
+            <p>Three steps from a pile of past papers to a practice paper.</p>
+          </div>
+          <ol class="steps">
+            <li class="step">
+              <span class="step-no">1</span>
+              <h3>Upload</h3>
+              <p>Add your past papers and your book. Each file is read directly in your browser, so nothing is stored on our side.</p>
+            </li>
+            <li class="step">
+              <span class="step-no">2</span>
+              <h3>Analyse</h3>
+              <p>Questions are split out and grouped by similarity. You see which questions repeat and in which years.</p>
+            </li>
+            <li class="step">
+              <span class="step-no">3</span>
+              <h3>Practise</h3>
+              <p>Download the repetition report and a guess paper with an answer key. Then ask follow-up questions in your own language.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Why students use it</h2>
+            <p>Built for the way exams are actually prepared: by patterns, not guesswork.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>A repetition report</h3>
+              <p>See every question group, how many times it appeared, and the years it showed up. Focus revision on the topics that return.</p>
+            </article>
+            <article class="feature">
+              <h3>A guess paper with answers</h3>
+              <p>Sections, marks and an answer key, built from high-frequency questions and gaps in your textbook coverage.</p>
+            </article>
+            <article class="feature">
+              <h3>Chat in your language</h3>
+              <p>Ask about any topic in English, Urdu, or the mix you think in. Answers are grounded in your book excerpt.</p>
+            </article>
+            <article class="feature">
+              <h3>Private by design</h3>
+              <p>No accounts and no file uploads to our servers. Your API key stays in the browser session and is never saved.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="wrap narrow">
+          <div class="section-head">
+            <h2>Frequently asked questions</h2>
+          </div>
+          <details class="faq-item" open>
+            <summary>What is Guess Paper Builder?</summary>
+            <p>It is a free web tool that reads your past exam papers and textbook, counts how often each question repeats across years, and writes a likely guess paper with an answer key.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is Guess Paper Builder free?</summary>
+            <p>Yes. You only pay your AI provider if you choose a paid model. Groq offers a free tier you can use.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need to create an account?</summary>
+            <p>No. There is no login, signup or subscription.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are my files uploaded to a server?</summary>
+            <p>No. Files are read in your browser. The only outside request is to the AI provider you choose, made with your own API key.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which file types can I upload?</summary>
+            <p>Text-based PDF, DOCX, XLS, XLSX, CSV, TXT and Markdown files, up to 20 files per session.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it work with scanned papers?</summary>
+            <p>Not reliably. Scanned PDFs need a text layer. Text-based PDFs give the best results.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is the guess paper guaranteed to appear in the exam?</summary>
+            <p>No. It is a study aid built from patterns in past papers. Use it alongside your textbook and your teacher's guidance.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which AI providers are supported?</summary>
+            <p>OpenAI, Google Gemini, Groq and Anthropic Claude. You paste your own key for the provider you choose.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="wrap narrow">
+          <div class="section-head">
+            <h2>From the blog</h2>
+            <p>Practical guides on past papers, revision planning and exam preparation.</p>
+          </div>
+          <!--LATEST_POSTS-->
+          <p class="more-link"><a href="/blog">Read all articles</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap narrow founder" id="founder">
+          <div class="section-head">
+            <h2>Why I built this</h2>
+          </div>
+          <p>
+            I was preparing for my intermediate exams and kept facing the same problem. I had around ten past
+            papers from the last five years and my own book, but no clear picture of which questions were coming back.
+            Going through every paper by hand took too long, and I still felt unprepared.
+          </p>
+          <p>
+            So I built this tool for myself. It reads the papers, finds the questions that keep repeating, and turns
+            them into a guess paper you can practise with. I am sharing it free so that other students can use it too.
+          </p>
+          <p>
+            I am <strong>Ubaid Ali</strong>, a developer who builds projects with Python, TypeScript, React and
+            LangChain. You can find me on
+            <a href="https://linkedin.com/in/m-ubaid-ali" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+            <a href="https://github.com/ubaidslab" target="_blank" rel="noopener noreferrer">GitHub</a>, or email
+            <a href="mailto:contact.ubaidmalik@gmail.com">contact.ubaidmalik@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="brand-line">Guess Paper Builder</p>
+          <p class="muted">Free study tool by Ubaid Ali. Built with React, TypeScript and Vite.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="https://github.com/ubaidslab/guess-paper-builder" target="_blank" rel="noopener noreferrer">Source code</a>
+        </nav>
+      </div>
+      <div class="wrap copyright">© 2026 Ubaid Ali. All rights reserved.</div>
+    </footer>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
