@@ -1,0 +1,13 @@
+{
+  "name": "Guess Paper Builder",
+  "siteUrl": "https://guess-paper-builder.vercel.app",
+  "description": "Free AI study tool. Upload past papers and your book to find repeated exam questions and generate a likely guess paper. Bring your own API key. No signup.",
+  "language": "en",
+  "githubRepo": "https://github.com/ubaidslab/guess-paper-builder",
+  "author": {
+    "name": "Ubaid Ali",
+    "email": "contact.ubaidmalik@gmail.com",
+    "linkedin": "https://linkedin.com/in/m-ubaid-ali",
+    "github": "https://github.com/ubaidslab"
+  }
+}
